@@ -11,7 +11,7 @@ def check_inmueble(año, metros, habitaciones, garaje, zona, estado):
     else:
         print('Zona no deseada o Estado inválido')
 
-check_inmueble(2001, 64, 3, 'Si', 'A', 'Disponible')
+check_inmueble(2001, 64, 2, 'Si', 'A', 'Disponible')
 print(inmuebles_validados)
 
 
@@ -24,8 +24,9 @@ def editor(indice, año, metros, habitaciones, garaje, zona, estado):
                 inmuebles_validados[indice]['habitaciones'] = habitaciones
                 inmuebles_validados[indice]['garaje'] = garaje
                 inmuebles_validados[indice]['zona'] = zona
-                inmuebles_validados[indice]['estado'] = Estado
+                inmuebles_validados[indice]['estado'] = estado
                 print('El inmueble ha sido modificado exitosamente')
+                break
             else:
                 print('El inmueble no cumple con los requisitos')
         else:
@@ -36,6 +37,16 @@ def editor(indice, año, metros, habitaciones, garaje, zona, estado):
 editor(0, 2010, 64, 3, 'Si', 'A', 'Disponible')
 print(inmuebles_validados)
 
+def remover_inmueble(indice):
+    if indice >= 0 and indice < len(inmuebles_validados):
+        inmueble_eliminado = inmuebles_validados.pop(indice)
+        print(f'El inmueble {inmueble_eliminado} ha sido eliminado exitosamente')
+    else:
+        print('El inmueble a eliminar no existe en la lista')
+
+remover_inmueble(0)
+print(inmuebles_validados)
+        
 
 
 
