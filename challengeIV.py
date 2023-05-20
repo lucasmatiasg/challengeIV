@@ -44,9 +44,18 @@ def remover_inmueble(indice):
     else:
         print('El inmueble a eliminar no existe en la lista')
 
-remover_inmueble(0)
+#remover_inmueble(0)
+#print(inmuebles_validados)
+
+def renovar_estado(indice, cambio_estado):
+    if indice >= 0 and indice < len(inmuebles_validados):
+        if cambio_estado in ['Disponible', 'Reservado', 'Vendido']:
+            inmuebles_validados[indice]['estado'] = cambio_estado
+            print('El estado a sido actualizado exitosamente')
+        else:
+            print('El estado que quieres poner no está permitido. Recuerda que los estados válidos son: Disponible,                 Reservado o Vendido.')
+    else:
+        print('No se encuentra estado a modificar según el índice dado')
+
+renovar_estado(0, 'Vendido')
 print(inmuebles_validados)
-        
-
-
-
