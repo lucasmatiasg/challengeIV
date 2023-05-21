@@ -11,8 +11,6 @@ def check_inmueble(año, metros, habitaciones, garaje, zona, estado):
     else:
         print('Zona no deseada o Estado inválido')
 
-
-
 def editor(indice, año, metros, habitaciones, garaje, zona, estado):
     while indice >= 0 and indice < len(inmuebles_validados):
         if zona in ['A', 'B', 'C'] and estado in ['Disponible', 'Reservado', 'Vendido']:
@@ -30,15 +28,12 @@ def editor(indice, año, metros, habitaciones, garaje, zona, estado):
         else:
             print('Zona no deseada o Estado inválido')
 
-
-
 def remover_inmueble(indice):
     if indice >= 0 and indice < len(inmuebles_validados):
         inmueble_eliminado = inmuebles_validados.pop(indice)
         print(f'El inmueble {inmueble_eliminado} ha sido eliminado exitosamente')
     else:
         print('El inmueble a eliminar no existe en la lista')
-
 
 def renovar_estado(indice, cambio_estado):
     if indice >= 0 and indice < len(inmuebles_validados):
@@ -50,6 +45,7 @@ def renovar_estado(indice, cambio_estado):
     else:
         print('No se encuentra estado a modificar según el índice dado')
 
-
-
-
+def precio_inmueble(presupuesto):
+    resultados = []
+    for inmueble in range(len(inmuebles_validados)):
+        consulta = inmuebles_validados[inmueble]
